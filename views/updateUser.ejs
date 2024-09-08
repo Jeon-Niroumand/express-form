@@ -1,0 +1,25 @@
+<!-- views/updateUser.ejs -->
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+  </head>
+<body>
+  <h1><%= title %></h1>
+  <%- include("partials/errors.ejs") %>
+  <form action="/<%= user.id %>/update" method="POST">
+    <label for="firstName">First Name: </label>
+    <input type="text" name="firstName" value="<%= user.firstName %>" required>
+    <label for="lasttName">Last Name: </label>
+    <input type="text" name="lastName" value="<%= user.lastName %>" required></br>
+    <label for="email">Email: </label>
+    <input type="email" name="email" value="<%= user.email %>" required>
+    <label for="age">Age: </label>
+    <input type="number" name="age" value="<%= user.age %>" optional></br>
+    <label for="bio">Bio: </label>
+    <input type="text" name="bio" value="<%= user.bio %>" optional></br>
+    <button type="submit">Update User</button>
+  </form>
+  <a href="/">Back to home</a>
+</body>
+</html>
